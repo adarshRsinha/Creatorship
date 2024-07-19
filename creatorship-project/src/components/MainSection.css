@@ -1,0 +1,69 @@
+/* MainSection.css */
+
+.main-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 85vh;
+  margin: 0;
+  padding: 2rem;
+  background-color: #c6c9cc;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 45%; /* Adjusted width for better layout */
+  padding: 2rem;
+}
+
+.text-content {
+  max-width: 100%; /* Ensure text content takes full width */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.text-content h1 {
+  font-size: 3rem; /* Adjusted for better readability */
+  color: #002855;
+  margin-top: 2rem;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+}
+
+.text-content p {
+  margin: 0.5rem 0;
+  width: 100%;
+  font-size: 1.2rem;
+  color: #333333;
+  padding: 10px;
+}
+
+.cta-button {
+  padding: 0.75rem 2rem;
+  background-color: #ff7e1b;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e56d17;
+}
+
+.image-content {
+  width: 50%; /* Ensure image content takes half the width */
+  display: flex;
+  justify-content: center; /* Center the slider within this container */
+}
+
+.main-section.enter .text-content {
+  opacity: 1;
+  transform: translateY(0);
+}

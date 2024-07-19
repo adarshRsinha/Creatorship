@@ -1,0 +1,39 @@
+/* src/components/Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #141a2c;
+  }
+
+  .nav{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+  
+  .logo img {
+    height: 80px;
+    width: 200px;
+  }
+  
+  .list {
+    margin: 0 1rem;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .auth-buttons .login,
+  .auth-buttons .signup {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .auth-buttons .signup {
+    background-color: #ff7e1b;
+    color: #ffffff;
+  }
+  

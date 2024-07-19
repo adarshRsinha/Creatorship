@@ -1,0 +1,159 @@
+/* CreatorForm.css */
+
+/* Reset some basic elements for consistency across browsers */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+  color: #333;
+}
+
+.content-wrapper {
+  /* max-width: 800px; */
+  width: 98.7vw;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-cotent1 img{
+  border-radius: 10px;
+}
+
+.card {
+  background: linear-gradient(135deg, #f3f3f3 0%, #ffffff 100%);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+.card-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #080808;
+  border-radius: 5px;
+  background-color:  #dfdede;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(128, 189, 255, 0.5);
+}
+
+.form-control::placeholder {
+  color: #363636;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  margin-right: 0.5rem;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 123, 255, 0.2);
+}
+
+.btn-light {
+  background: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #ced4da;
+  box-shadow: 0 4px 6px rgba(108, 117, 125, 0.1);
+}
+
+.btn-light:hover {
+  background: #e2e6ea;
+  box-shadow: 0 6px 8px rgba(108, 117, 125, 0.2);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+}
+
+.col-sm-9 input{
+  width: 30rem;
+}
+
+.col-md-6 {
+    display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  padding: 0 0.5rem;
+  margin: 0 -0.5rem;
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+}
+
+.col-sm-3-col-form-label{
+  gap: 2.5rem;
+}

@@ -1,0 +1,100 @@
+/* Simple.css */
+.main-cont{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    /* height: 125vh; */
+    height: 100%;
+    margin: 0;
+    padding: 2rem;
+    
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    position: relative;
+    z-index: 9;
+    /* overflow: hidden; */
+    width: 50%;
+    padding: 0 1.5rem;
+    gap: 0.1px;
+}
+
+.content h1{
+    font-size: 3.5rem;
+    color: #002855;
+    margin-top: 2rem;
+    font-weight: bold;
+    letter-spacing: -0.025em;
+    
+}
+
+.content p{
+    margin: 0.5rem 0;
+    width: 100%;
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+.para{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.main-image{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    position: relative;
+    z-index: 9;
+    
+}
+
+.img1{
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.img2{
+    margin-top: 60px;
+}
+
+img{
+    width: 30rem;
+}
+
+.main-image .fibus-button{
+    padding: 0.75rem 2rem;
+    background-color: #ff7e1b;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 1.5rem;
+    width: 15rem;
+    margin-top: 120px;
+    margin-left: 70px;
+}
+
+.fibus-button{
+    padding-left: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.main-cont.enter .para{
+    opacity: 1;
+  transform: translateY(0);
+}
+
+.main-cont.enter .fibus-button{
+    opacity: 1;
+  transform: translateY(0);
+}

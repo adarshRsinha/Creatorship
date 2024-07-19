@@ -1,0 +1,44 @@
+/* ImageSlider.css */
+
+/* Container for the entire slider */
+.slider {
+  position: relative;
+  width: 80%; /* Adjust the width as needed */
+  height: 70vh; /* Adjust the height as needed */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for shadow effect */
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Each individual slide */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Styling for the images */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire slide area */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
