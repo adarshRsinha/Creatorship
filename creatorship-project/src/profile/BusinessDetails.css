@@ -3,10 +3,11 @@
 } */
 
 .container {
-  /* min-width: 98.7vw;
-  max-width: 900px; */
-  margin: 0 auto;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 98.7vw;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .title {
