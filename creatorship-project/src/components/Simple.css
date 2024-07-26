@@ -98,6 +98,6 @@ img{
 .main-cont.enter .fibus-button{
     opacity: 1;
     transform: translateY(0);
-    padding-left: 20px;
+    padding-left: 55px;
     border-radius: 5px;
 }
