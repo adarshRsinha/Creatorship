@@ -35,10 +35,20 @@
   .auth-buttons .login{
     background-color: white;
     color: black;
+    width: 8rem;
+    /* margin-left: 14rem; */
   }
   
   .auth-buttons .signup {
     background-color: #ff7e1b;
     color: #ffffff;
+    width: 11rem;
+  }
+
+  .auth-buttons .logout{
+    background-color: white;
+    color: black;
+    width: 8rem;
+    margin-left: 14rem;
   }
   

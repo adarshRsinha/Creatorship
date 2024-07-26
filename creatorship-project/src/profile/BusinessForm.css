@@ -35,7 +35,9 @@ body {
 }
 
 .image-content1 img{
-  width: 60rem;
+  height: 35rem;
+  width: 80%;
+  margin-left: 100px;
   border-radius: 10px;
 }
 
@@ -48,6 +50,8 @@ body {
 
 .card-body {
   padding: 0;
+  width: 65%;
+  margin-left: 180px;
 }
 
 .card-title {
@@ -84,6 +88,7 @@ body {
   border-radius: 5px;
   background-color:  #dfdede;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: #080808;
 }
 
 .form-control:focus {

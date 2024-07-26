@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { backend_uri } from '../constants/Uri';
+import axios from "axios";
 import './CreatorForm.css';
 
 const CreatorForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    expertise: '',
-    portfolio: '',
-    bio: '',
-    availability: ''
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [expertise, setExpertise] = useState('');
+  const [portfolio, setPortfolio] = useState('');
+  const[instagram, setInstagram]=useState('');
+  const[twitter, setTwitter]=useState('');
+  const navigate = useNavigate();
 
-  const { name, email, phone, expertise, portfolio, bio, availability } = formData;
-
-  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const onSubmit = e => {
-    e.preventDefault();
-    // Handle form submission
-  };
+  const onSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const token = localStorage.getItem('token');
+          if (!token) {
+            throw new Error('No token found');
+          }
+        await axios.post(`${backend_uri}/creator`, 
+          { name, email, expertise, portfolio, instagram, twitter },
+          { headers: { 
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          } }
+        );
+        alert('Creator profile created');
+        navigate('/creator-details');
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
   return (
     <>
@@ -45,7 +58,7 @@ const CreatorForm = () => {
                     placeholder="Name"
                     name="name"
                     value={name}
-                    onChange={onChange}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <p className="card-description">Contact Details</p>
@@ -59,7 +72,7 @@ const CreatorForm = () => {
                           className="form-control"
                           name="email"
                           value={email}
-                          onChange={onChange}
+                          onChange={(e) => setEmail(e.target.value)}
                         />
                       </div>
                     </div>
@@ -72,7 +85,7 @@ const CreatorForm = () => {
                     id="exampleSelectExpertise"
                     name="expertise"
                     value={expertise}
-                    onChange={onChange}
+                    onChange={(e) => setExpertise(e.target.value)}
                   >
                     <option value="Youtuber">Youtuber</option>
                     <option value="Social Media Influencer">Social Media Influencer</option>
@@ -91,10 +104,10 @@ const CreatorForm = () => {
                     placeholder="Portfolio URL"
                     name="portfolio"
                     value={portfolio}
-                    onChange={onChange}
+                    onChange={(e) => setPortfolio(e.target.value)}
                   />
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label htmlFor="exampleTextarea1">Bio</label>
                   <textarea
                     className="form-control"
@@ -102,21 +115,55 @@ const CreatorForm = () => {
                     rows="4"
                     name="bio"
                     value={bio}
-                    onChange={onChange}
+                    onChange={(e) => setBio(e.target.value)}
                   ></textarea>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="exampleTextarea2">Availability</label>
+                </div> */}
+                {/* <div className="form-group">
+                  <label htmlFor="exampleTextarea2">Youtube</label>
                   <textarea
                     className="form-control"
                     id="exampleTextarea2"
                     rows="4"
-                    name="availability"
-                    value={availability}
+                    name="youtube"
+                    value={youtube}
                     onChange={onChange}
                   ></textarea>
+                </div> */}
+                <div className="form-group">
+                  <label htmlFor="exampleTextarea2">Instagram</label>
+                  <textarea
+                    className="form-control"
+                    id="exampleTextarea2"
+                    rows="4"
+                    name="instagram"
+                    value={instagram}
+                    onChange={(e) => setInstagram(e.target.value)}
+                  ></textarea>
                 </div>
+                <div className="form-group">
+                  <label htmlFor="exampleTextarea2">Twitter</label>
+                  <textarea
+                    className="form-control"
+                    id="exampleTextarea2"
+                    rows="4"
+                    name="twitter"
+                    value={twitter}
+                    onChange={(e) => setTwitter(e.target.value)}
+                  ></textarea>
+                </div>
+                {/* <div className="form-group">
+                  <label htmlFor="exampleTextarea2">Skills</label>
+                  <textarea
+                    className="form-control"
+                    id="exampleTextarea2"
+                    rows="4"
+                    name="skills"
+                    value={skills}
+                    onChange={onChange}
+                  ></textarea>
+                </div> */}
                 <button type="submit" className="btn btn-primary">Submit</button>
+                {/* <button type="submit" className="btn btn-primary">Submit</button> */}
                 <button type="button" className="btn btn-light">Cancel</button>
               </form>
             </div>

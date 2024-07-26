@@ -41,6 +41,7 @@
 }
 
 .para{
+    width: 40rem;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -96,5 +97,7 @@ img{
 
 .main-cont.enter .fibus-button{
     opacity: 1;
-  transform: translateY(0);
+    transform: translateY(0);
+    padding-left: 20px;
+    border-radius: 5px;
 }
