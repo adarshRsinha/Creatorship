@@ -487,10 +487,10 @@ body {
 
 /* Responsive styles */
 @media (min-width: 640px) {
-  .grid-cols-2 {
+  /* .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     /* width: 100%; */
-  }
+  } */
 
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -533,7 +533,7 @@ body {
 
 @media (min-width: 1024px) {
   .xl\:w-full {
-    width: 100%;
+    /* width: 100%; */
   }
 }
 
