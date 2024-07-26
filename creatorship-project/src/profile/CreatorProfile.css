@@ -1,9 +1,9 @@
-*{
+/* *{
   width: 100%;
-}
+} */
 
 .container {
-  max-width: 800px;
+  min-width: 98.7vw;
   margin: 0 auto;
   padding: 15% 5%;
   /* width: 98.7vw; */
