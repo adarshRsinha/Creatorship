@@ -30,7 +30,8 @@ const CreatorForm = () => {
         alert('Creator profile created');
         navigate('/creator-details');
       } catch (error) {
-        console.error(error);
+        console.error('Error creating creator profile:', error);
+    alert(`Error creating creator profile: ${error.message}`);
       }
     };
 
@@ -49,128 +50,89 @@ const CreatorForm = () => {
                 Tell us about your skills and experience!
               </p>
               <form className="forms-sample" onSubmit={onSubmit}>
-                <div className="form-group">
-                  <label htmlFor="exampleInputName1">Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="exampleInputName1"
-                    placeholder="Name"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-                <p className="card-description">Contact Details</p>
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group row">
-                      <label className="col-sm-3 col-form-label">Email address</label>
-                      <div className="col-sm-9">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                        />
+                  <div className="form-group">
+                    <label htmlFor="exampleInputName1">Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputName1"
+                      placeholder="Name"
+                      name="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
+                  <p className="card-description">Contact Details</p>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="form-group row">
+                        <label className="col-sm-3 col-form-label">Email address</label>
+                        <div className="col-sm-9">
+                          <input
+                            type="text"
+                            className="form-control"
+                            name="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="exampleSelectExpertise">Expertise</label>
-                  <select
-                    className="form-control"
-                    id="exampleSelectExpertise"
-                    name="expertise"
-                    value={expertise}
-                    onChange={(e) => setExpertise(e.target.value)}
-                  >
-                    <option value="Youtuber">Youtuber</option>
-                    <option value="Social Media Influencer">Social Media Influencer</option>
-                    <option value="Website content writer">Website content writer</option>
-                    <option value="Blogger">Blogger</option>
-                    <option value="Video Creator">Video Creator</option>
-                    <option value="Photographer">Photographer</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="exampleInputPortfolio">Portfolio</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="exampleInputPortfolio"
-                    placeholder="Portfolio URL"
-                    name="portfolio"
-                    value={portfolio}
-                    onChange={(e) => setPortfolio(e.target.value)}
-                  />
-                </div>
-                {/* <div className="form-group">
-                  <label htmlFor="exampleTextarea1">Bio</label>
-                  <textarea
-                    className="form-control"
-                    id="exampleTextarea1"
-                    rows="4"
-                    name="bio"
-                    value={bio}
-                    onChange={(e) => setBio(e.target.value)}
-                  ></textarea>
-                </div> */}
-                {/* <div className="form-group">
-                  <label htmlFor="exampleTextarea2">Youtube</label>
-                  <textarea
-                    className="form-control"
-                    id="exampleTextarea2"
-                    rows="4"
-                    name="youtube"
-                    value={youtube}
-                    onChange={onChange}
-                  ></textarea>
-                </div> */}
-                <div className="form-group">
-                  <label htmlFor="exampleTextarea2">Instagram</label>
-                  <textarea
-                    className="form-control"
-                    id="exampleTextarea2"
-                    rows="4"
-                    name="instagram"
-                    value={instagram}
-                    onChange={(e) => setInstagram(e.target.value)}
-                  ></textarea>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="exampleTextarea2">Twitter</label>
-                  <textarea
-                    className="form-control"
-                    id="exampleTextarea2"
-                    rows="4"
-                    name="twitter"
-                    value={twitter}
-                    onChange={(e) => setTwitter(e.target.value)}
-                  ></textarea>
-                </div>
-                {/* <div className="form-group">
-                  <label htmlFor="exampleTextarea2">Skills</label>
-                  <textarea
-                    className="form-control"
-                    id="exampleTextarea2"
-                    rows="4"
-                    name="skills"
-                    value={skills}
-                    onChange={onChange}
-                  ></textarea>
-                </div> */}
-                <button type="submit" className="btn btn-primary">Submit</button>
-                {/* <button type="submit" className="btn btn-primary">Submit</button> */}
-                <button type="button" className="btn btn-light">Cancel</button>
-              </form>
+                  <div className="form-group">
+                    <label htmlFor="exampleInputPortfolio">Expertise</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputPortfolio"
+                      placeholder="Expertise"
+                      name="expertise"
+                      value={expertise}
+                      onChange={(e) => setExpertise(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="exampleInputPortfolio">Portfolio</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputPortfolio"
+                      placeholder="Portfolio URL"
+                      name="portfolio"
+                      value={portfolio}
+                      onChange={(e) => setPortfolio(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="exampleTextarea2">Instagram</label>
+                    <textarea
+                      className="form-control"
+                      id="exampleTextarea2"
+                      rows="4"
+                      name="instagram"
+                      value={instagram}
+                      onChange={(e) => setInstagram(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="exampleTextarea2">Twitter</label>
+                    <textarea
+                      className="form-control"
+                      id="exampleTextarea2"
+                      rows="4"
+                      name="twitter"
+                      value={twitter}
+                      onChange={(e) => setTwitter(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <button type="submit" className="btn btn-primary">Submit</button>
+                  <button type="button" className="btn btn-light" onClick={() => navigate('/creator-details')}>Cancel</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 };
