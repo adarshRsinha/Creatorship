@@ -3,10 +3,8 @@
 } */
 
 .container {
-  min-width: 98.7vw;
   margin: 0 auto;
-  padding: 15% 5%;
-  /* width: 98.7vw; */
+  padding: 20px;
 }
 
 .title {
