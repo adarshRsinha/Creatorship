@@ -63,13 +63,13 @@ While the backend is complete and fully operational, the frontend can benefit fr
 1. Start the backend server:
    ```sh
    cd server
-   npm run dev
+   npm start
    ```
 
 2. Start the frontend development server:
    ```sh
    cd creatorship-project
-   npm start
+   npm run dev
    ```
 
 3. Open your browser and navigate to `http://localhost:3000` to see the application in action.
