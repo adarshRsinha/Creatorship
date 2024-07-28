@@ -111,10 +111,11 @@ const CreatorDetails = () => {
           <p className="businessInfo">
             <span className="label">Equity Offered:</span> {business.equityOffered}%
           </p>
-          <p className="businessInfo">Status:</p> 
+          <p className="businessInfo">Status:
             <span className={`status ${business.status.charAt(0).toUpperCase() + business.status.slice(1)}`}>
               {business.status}
             </span>
+            </p> 
           <button 
             className="button" 
             onClick={() => handleRequestEquity(business._id)}

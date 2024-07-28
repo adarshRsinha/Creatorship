@@ -66,7 +66,7 @@ const Header = () => {
 
     <header className="header">
       <div className="logo">
-        <a href="https://imgbb.com/"><img src="https://i.ibb.co/p1xp0Nj/logo.png" alt="logo" border="0" /></a>
+        <a href="/"><img src="https://i.ibb.co/p1xp0Nj/logo.png" alt="logo" border="0" /></a>
       </div>
       <div className="navbar">
         <ul className="nav">

@@ -22,7 +22,7 @@ const Footer = () => {
                 />
               </svg> */}
               {/* <span className="footer-logo-text"><h2>Creatorships</h2></span> */}
-              <a href="https://imgbb.com/"><img src="https://i.ibb.co/p1xp0Nj/logo.png" alt="logo" border="0"/></a>
+              <a href="/"><img src="https://i.ibb.co/p1xp0Nj/logo.png" alt="logo" border="0"/></a>
                 <div className='footer-describe'>
                 <p className="footer-description">
                     A Business Partnership Platform

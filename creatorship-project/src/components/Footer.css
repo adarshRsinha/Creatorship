@@ -42,6 +42,10 @@
     /* margin-bottom: 200px; */
   }
 
+  .footer-logo img{
+    width: 25rem;
+  }
+
   
   .footer-logo span{
       margin-right: 250px;

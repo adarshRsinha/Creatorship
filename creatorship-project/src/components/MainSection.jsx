@@ -32,11 +32,11 @@ const MainSection = () => {
         </p>
         {userType ? (
             userType === 'creator' ? (
-              <Link to='/business-details'>
+              <Link to='/creator-details'>
                 <button className="cta-button">Find Business</button>
               </Link>
             ) : (
-              <Link to='/creator-details'>
+              <Link to='/business-details'>
                 <button className="cta-button">Find Creator</button>
               </Link>
             )
