@@ -22,6 +22,7 @@ const CreatorDetails = () => {
     const fetchBusinesses = async () => {
         const token = localStorage.getItem('token');
           if (!token) {
+            alert("Please Login to access")
             throw new Error('No token found');
           }
       const response = await axios.get(`${backend_uri}/business`, {

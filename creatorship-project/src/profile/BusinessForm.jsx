@@ -55,10 +55,10 @@ const BusinessForm = () => {
 };
 
   return (
-    <>
+    <div className='body-form'>
     <div className="content-wrapper">
       <div className="image-content1">
-      <a href="https://ibb.co/HHk3tPG"><img src="https://i.ibb.co/bK8DsvN/businessform.jpg" alt="businessform" border="0"/></a>
+      <a><img src="https://i.ibb.co/bK8DsvN/businessform.jpg" alt="businessform" border="0"/></a>
       </div>
       <div className="row">
         <div className="col-12 grid-margin stretch-card">
@@ -193,7 +193,7 @@ const BusinessForm = () => {
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 };
 

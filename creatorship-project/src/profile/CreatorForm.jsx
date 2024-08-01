@@ -36,10 +36,10 @@ const CreatorForm = () => {
     };
 
   return (
-    <>
+    <div className='body-form'>
     <div className="content-wrapper">
         <div className="image-content1">
-        <a href="https://ibb.co/48bzMFH"><img src="https://i.ibb.co/Byhbjf9/monetizing-content-6918852-1280-1.jpg" alt="monetizing-content-6918852-1280-1" border="0"/></a>
+        <a><img src="https://i.ibb.co/Byhbjf9/monetizing-content-6918852-1280-1.jpg" alt="monetizing-content-6918852-1280-1" border="0"/></a>
         </div>
       <div className="row">
         <div className="col-12 grid-margin stretch-card">
@@ -133,7 +133,7 @@ const CreatorForm = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

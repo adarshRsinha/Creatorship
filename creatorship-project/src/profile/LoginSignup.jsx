@@ -23,7 +23,9 @@ const LoginSignup = () => {
 
       } catch (error) {
         console.error(error);
-        alert(error.response.data.message);
+        if(error.response){
+          alert("Invalid Login");
+        }
       }
     };
 
@@ -190,7 +192,7 @@ const LoginSignup = () => {
               </div>
             </div>
           </form>
-          <div className="mt-3 space-y-3">
+          {/* <div className="mt-3 space-y-3">
             <button
               type="button"
               className="relative inline-flex items-center justify-center w-full h-10 rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
@@ -209,7 +211,7 @@ const LoginSignup = () => {
               </svg>
               <span className="ml-2">Sign in with Facebook</span>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

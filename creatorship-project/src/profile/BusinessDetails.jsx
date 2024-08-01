@@ -4,7 +4,7 @@ import {backend_uri} from '../constants/Uri';
 import { useNavigate } from 'react-router-dom';
 import './BusinessDetails.css';
 
-function BusinessDetails() {
+const BusinessDetails = () => {
     const [name, setCompanyName] = useState('');
     const [website, setWebsite] = useState('');
     const [email, setEmail] = useState('');
@@ -13,6 +13,7 @@ function BusinessDetails() {
     const [needs, setNeeds] = useState('');
     const [equityOffered, setEquityOffered] = useState('');
     const [creators, setCreators] = useState([]);
+    const [loading, setLoading] = useState(false);
     const navigate=useNavigate();
   
     useEffect(() => {
@@ -59,24 +60,60 @@ function BusinessDetails() {
           }
         }
       };
-      const handleShareEquity = async (creatorId) => {
-        const equity = prompt('Enter equity percentage to share:');
-        if (equity) {
-          try {
-            const token = localStorage.getItem('token');
-            await axios.put(`${backend_uri}/equity-request/creator/${creatorId}`, 
-              { equity },
-              { headers: { 
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-              }  }
-            );
-            alert('Equity share request sent!');
-          } catch (error) {
-            console.error('Error sending equity share request:', error);
-          }
+      // const handleShareEquity = async (creatorId) => {
+      //   const equity = prompt('Enter equity percentage to share:');
+      //   if (equity) {
+      //     try {
+      //       const token = localStorage.getItem('token');
+      //       await axios.put(`${backend_uri}/equity-request/creator/${creatorId}`, 
+      //         { equity },
+      //         { headers: { 
+      //           'Authorization': `Bearer ${token}`,
+      //           'Content-Type': 'application/json'
+      //         }  }
+      //       );
+      //       alert('Equity share request sent!');
+      //     } catch (error) {
+      //       console.error('Error sending equity share request:', error);
+      //     }
+      //   }
+      // };
+
+      const handleShareEquity = async (creatorId, creatorEmail) => {
+        const equityInput = prompt('Enter equity percentage to share:');
+        const equity = parseFloat(equityInput); // Convert input to a number
+
+        if (isNaN(equity) || equity < 0 || equity > 100) {
+            alert('Please enter a valid equity percentage between 0 and 100.');
+            return;
         }
-      };
+
+        if (equityInput) {
+            setLoading(true); // Start loading state
+            try {
+                const token = localStorage.getItem('token');
+                await axios.put(`${backend_uri}/equity-request/creator/${creatorId}`,
+                    { equity },
+                    {
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    }
+                );
+                alert('Equity share request sent!');
+
+                // Navigate to email client
+                window.location.href = `mailto:${creatorEmail}?subject=Equity Share Request&body=Dear Creator,%0D%0A%0D%0AI would like to request an equity share of ${equity}% in your business.%0D%0A%0D%0AThank you!`;
+
+            } catch (error) {
+                console.error('Error sending equity share request:', error);
+                alert('An error occurred while sending the request.');
+            } finally {
+                setLoading(false); // End loading state
+            }
+        }
+    };
     return (
         <div className="container">
             <h2 className="title">Creators to connect with</h2>
@@ -100,7 +137,7 @@ function BusinessDetails() {
                     </p>
                     <button
                         className="button"
-                        onClick={() => handleShareEquity(creator._id)}
+                        onClick={() => handleShareEquity(creator._id, creator.email)}
                     >
                         Share Equity
                     </button>

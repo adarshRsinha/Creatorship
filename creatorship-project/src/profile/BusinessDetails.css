@@ -5,7 +5,7 @@
 .container {
     /* display: flex;
     flex-direction: column; */
-    width: 98.7vw;
+    /* width: 98.7vw; */
     margin: 0 auto;
     padding: 20px;
 }
@@ -18,7 +18,7 @@
 }
 
 .creatorCard {
-  background-color: #f8f9fa;
+  background-color: #cfd0d1;
   border: 1px solid #e9ecef;
   border-radius: 8px;
   padding: 20px;

@@ -76,27 +76,33 @@ const Header = () => {
           {userType === 'creator' && (
             <>
               <li>
-                <NavLink to="/create-business" className="list">Business</NavLink>
+                <NavLink to="/create-creator" className="list">Creator</NavLink>
               </li>
               <li>
-                <NavLink to="/creator-profile" className="list">Profile</NavLink>
+                <NavLink to="/creator-details" className="list">Business</NavLink>
               </li>
               <li>
                 <NavLink to="/contact" className="list">Contact</NavLink>
+              </li>
+              <li>
+                <NavLink to="/creator-profile" className="list">Profile</NavLink>
               </li>
             </>
           )}
           {userType === 'business' && (
             <>
               <li>
-                <NavLink to="/create-creator" className="list">Creator</NavLink>
+                <NavLink to="/business-details" className="list">Creator</NavLink>
               </li>
               <li>
-                <NavLink to="/business-details" className="list">Business</NavLink>
+                <NavLink to="/create-business" className="list">Business</NavLink>
               </li>
               {/* <li>
                 <NavLink to="/business-dashboard" className="list">Business Dashboard</NavLink>
               </li> */}
+              <li>
+                <NavLink to="/contact" className="list">Contact</NavLink>
+              </li>
               <li>
                 <NavLink to="/business-profile" className="list">Profile</NavLink>
               </li>
@@ -105,10 +111,10 @@ const Header = () => {
           {!userType && (
             <>
               <li>
-                <NavLink to="/register" className="list">Creator</NavLink>
+                <NavLink to="/business-details" className="list">Creator</NavLink>
               </li>
               <li>
-                <NavLink to="/register" className="list">Business</NavLink>
+                <NavLink to="/creator-details" className="list">Business</NavLink>
               </li>
               <li>
                 <NavLink to="/contact" className="list">Contact</NavLink>
